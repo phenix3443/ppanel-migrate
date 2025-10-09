@@ -1,0 +1,18 @@
+V2boardDataSource: "root:123456@tcp(127.0.0.1:3306)/v2board?charset=utf8mb4&parseTime=True&loc=Local"
+PPanelDataSource: "root:123456@tcp(127.0.0.1:3306)/ppanel?charset=utf8mb4&parseTime=True&loc=Local"
+Migrate:
+  Plans:
+    - OldID: 3
+      NewID: 110
+    - OldID: 4
+      NewID: 210
+    - OldID: 5
+      NewID: 310
+  LongTermPlanID:  # Long Term Subscribe Needs to Balance
+    - 6
+    - 7
+    - 8
+  UnmatchedOnlyMigrateUser: false  # Unmatched subscriptions, only migrate users
+  MigrateAllUser: true  # Migrate all users, else only migrate users with active subscriptions
+  MigrateAffiliate: true  # Migrate affiliate relationships, need to migrate all users
+  NeedOrder: true  # Need to paid orders for subscriptions
